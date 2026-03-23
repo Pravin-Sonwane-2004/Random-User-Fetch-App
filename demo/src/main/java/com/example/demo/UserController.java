@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 @RequestMapping("/users") // Optional: prefixes all routes with /users
 public class UserController {
 
@@ -20,8 +21,8 @@ public class UserController {
 
     // POST mapping to create a user
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestParam String name) {
-        User savedUser = userService.saveUser(name);
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        User savedUser = userService.saveUser(user);
         return ResponseEntity.ok(savedUser);
     }
 }
