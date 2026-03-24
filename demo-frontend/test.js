@@ -7,7 +7,7 @@ const users = [
 
 for(let i =0;i<users.length;i++) {
     if(users[i].active) {
-        newArray[i] =  users[i];
+        newArray.push(users[i]);
     }
 }
 console.log(newArray);
