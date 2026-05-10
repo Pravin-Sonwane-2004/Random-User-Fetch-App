@@ -23,11 +23,11 @@
   //     <p>${user.email}</p>
       
   //   `;
-  //      // 🔥 create delete button
+  //      // create delete button
   //   const deleteBtn = document.createElement("button");
   //   deleteBtn.innerText = "Delete";
 
-  //   // 🔥 attach event to THIS button
+  //   //attach event to THIS button
   //   deleteBtn.addEventListener("click", () => {
   //     userDiv.remove();
   //   });

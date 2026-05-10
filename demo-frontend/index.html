@@ -1,16 +1,37 @@
-<!DOCTYPE html>
+<!DOCTYPE html>                
 <html lang="en">
 <head>
-  <title>Fetch Demo</title>
+    <title>Fetch Demo</title>
 </head>
 <body>
+    <h1>Random User</h1>
+    <div id="main-div">
+        <button id="btn">Get User</button>
+        <div id="user"></div>
+        <button id="deletebtn" style="color: rgb(0, 0, 0);background-color: blue;">this is button</button>
+    </div>
+    
+    <script>
+        document.getElementById("btn").addEventListener("click",async function() {
+          
+          const response = await fetch("logce");
+          try{
 
-  <h1>Random User</h1>
-<div id="main-div">
-<button id="btn">Get User</button>
-<div id="user"></div>
-<button id="deletebtn" style="color: rgb(0, 0, 0);background-color: blue;">this is button</button>
-</div>
- <script src="pk.js"></script>
+            document.getElementById("user").innerText = "Fetching user...";
+            console.log("Button clicked!");
+            const data = await response.json();
+            console.log(data);
+
+            user.createInnerHTML = `
+            <p>Id</p> ${data.id}
+             <p>Name</p> ${data.name}
+            `
+          }
+          catch{
+            document.getElementById("user").innerHTML = "cant fetch user.....";
+          }
+          
+        });
+    </script>
 </body>
 </html>
